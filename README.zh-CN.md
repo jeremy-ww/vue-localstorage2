@@ -72,7 +72,7 @@ this.$localStorage.set('list.0.name', 'mary')
 this.$localStorage.remove('name')
 ```
 
-### `clear()`
+#### `clear()`
 
 clear 方法并不会清楚该域名下的所有 localStorage, 只会清楚通过 vue-localstorage2 生成的值(即存储值的名称是以 `prefix` + `component name` 开始的键值对).
 

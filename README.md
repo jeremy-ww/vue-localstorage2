@@ -72,7 +72,7 @@ Delete a single key value based on the name.
 this.$localStorage.remove('name')
 ```
 
-### `clear()`
+#### `clear()`
 
 The clear method does not know all of the localStorage under the domain name, It is only clear that the value generated through the vue-localstorage2 (that is, the name of the stored value is the value pair that starts with the `prefix` + `component name`).
 
