@@ -1,6 +1,6 @@
 {
   "name": "vue-localstorage2",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Lightweight localStorage plugin for Vue 2.0",
   "main": "dist/vue-localstorage2.min.js",
   "module": "index.js",
