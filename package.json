@@ -2,8 +2,10 @@
   "name": "vue-localstorage2",
   "version": "0.0.1",
   "description": "Lightweight localStorage plugin for Vue 2.0",
-  "main": "index.js",
+  "main": "dist/vue-localstorage2.min.js",
+  "module": "index.js",
   "scripts": {
+    "build": "bili --input index.js --format cjs,umd,iife,cjs-min,umd-min,iife-min --banner",
     "examples": "poi",
     "lint": "eslint ."
   },
