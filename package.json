@@ -21,6 +21,7 @@
     "sewing": "0.0.32"
   },
   "devDependencies": {
+    "bili": "3.0.3",
     "eslint": "4.18.2",
     "eslint-config-standard": "11.0.0",
     "eslint-plugin-import": "2.9.0",
