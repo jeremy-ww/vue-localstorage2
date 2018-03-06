@@ -1,10 +1,17 @@
 import Storage from './Storage'
+import { cache } from 'sewing'
 
 function localStorage2 (Vue, { namespace = true, prefix } = {}) {
-  Vue.mixin({
-    created () {
-      const name = namespace ? this.$options.name : ''
-      this.$localStorage = new Storage(name, prefix)
+  const cachedStorageInstance = cache(function (name) {
+    return new Storage(name, prefix)
+  })
+
+  Object.defineProperties(Vue.prototype, {
+    '$localStorage': {
+      get () {
+        const name = namespace ? this.$options.name : ''
+        return cachedStorageInstance(name)
+      }
     }
   })
 }
