@@ -7,6 +7,8 @@
   "scripts": {
     "build": "bili --input index.js --format cjs,umd,iife,cjs-min,umd-min,iife-min --banner",
     "examples": "poi",
+    "docs": "poi build",
+    "postversion": "docs",
     "lint": "eslint ."
   },
   "repository": {
