@@ -9,7 +9,7 @@
     "test": "jest",
     "examples": "poi",
     "docs": "rm -rf docs/ && poi build",
-    "postversion": "docs",
+    "postversion": "npm run build && npm run docs",
     "lint": "eslint ."
   },
   "repository": {
