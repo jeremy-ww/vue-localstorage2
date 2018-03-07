@@ -5,7 +5,7 @@
   "main": "dist/vue-localstorage2.min.js",
   "module": "index.js",
   "scripts": {
-    "build": "bili --input index.js --format cjs,umd,iife,cjs-min,umd-min,iife-min --banner",
+    "build": "bili --input index.js --format cjs,umd,cjs-min,umd-min --exports named --banner",
     "test": "jest",
     "examples": "poi",
     "docs": "rm -rf docs/ && poi build",
