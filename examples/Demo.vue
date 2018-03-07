@@ -39,7 +39,7 @@
 
 <script>
 export default {
-  name: 'demo1',
+  name: 'demo',
 
   data () {
     return {
