@@ -104,4 +104,17 @@ describe('Storage', () => {
     })
     await expect(value).toEqual({ unit_test_foo: 'bar' })
   })
+
+  it('should clear storage', async () => {
+    const value = await page.evaluate(() => {
+      localStorage.setItem('first', 'foo')
+      localStorage.setItem('second', 'bar')
+      const storage = new Storage()
+      storage.set('first', 'foo')
+      storage.set('second', 'bar')
+      storage.clear()
+      return JSON.parse(JSON.stringify(localStorage))
+    })
+    await expect(value).toEqual({ first: 'foo', second: 'bar' })
+  })
 })
