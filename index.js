@@ -17,6 +17,7 @@ function localStorage2 (Vue, { namespace = true, prefix } = {}) {
 }
 
 export default localStorage2
+export { Storage }
 
 if (typeof window !== 'undefined' && window.Vue) {
   localStorage2(window.Vue)
