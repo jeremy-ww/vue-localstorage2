@@ -53,9 +53,8 @@ export default class Storage {
   }
 
   clear () {
-    for (let i = 0, iLength = localStorage.length; i < iLength; i++) {
-      const item = localStorage.key(i)
-      if (item.startsWith(this.prefix)) localStorage.removeItem(item)
-    }
+    Object.keys(localStorage).forEach(storage => {
+      if (storage.startsWith(this.prefix)) localStorage.removeItem(storage)
+    })
   }
 }
