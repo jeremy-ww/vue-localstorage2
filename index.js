@@ -1,5 +1,5 @@
+import cache from 'sewing/dist/cache'
 import Storage from './Storage'
-import { cache } from 'sewing'
 
 function localStorage2 (Vue, { namespace = true, prefix } = {}) {
   const cachedStorageInstance = cache(function (name) {
