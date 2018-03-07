@@ -1,4 +1,5 @@
-import { get } from 'sewing'
+import isType from 'sewing/dist/isType'
+import get from 'sewing/dist/get'
 
 export default class Storage {
   static parse (value) {
@@ -34,10 +35,16 @@ export default class Storage {
   set (path, value) {
     const { target, route } = this.split(path)
     const preItemValue = Storage.parse(localStorage.getItem(target))
+
     const item = route.length > 1
       ? Storage.update(preItemValue, route, value)
       : value
-    localStorage.setItem(target, JSON.stringify(item))
+
+    localStorage.setItem(target,
+      isType(item, ['Object', 'Array'])
+        ? JSON.stringify(item)
+        : item
+    )
   }
 
   remove (item) {
