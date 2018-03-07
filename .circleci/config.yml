@@ -30,5 +30,8 @@ jobs:
           name: build
           command: npm run build
       - run:
+          name: puppeteer
+          command: sh ./test/install_puppeteer_libs
+      - run:
           name: test
           command: npm run test
