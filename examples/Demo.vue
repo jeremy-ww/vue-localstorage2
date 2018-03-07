@@ -1,7 +1,14 @@
 <template>
   <section>
     <h1>Demo</h1>
-    <p>Add any key value to local storage (including json、array). Open the developer tool to see the storage changes.</p>
+    <p>
+      Add any key value to local storage (including json、array). Open the developer tool to see the storage changes. 
+    </p>
+    <p>
+      <a href="https://github.com/Army-U/vue-localstorage2/blob/master/examples/Demo.vue">
+        <small>Source Code</small>
+      </a>
+    </p>
 
     <el-tag
       v-for="(tag, key) in dynamicTags"
