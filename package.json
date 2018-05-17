@@ -2,15 +2,18 @@
   "name": "vue-localstorage2",
   "version": "0.0.3",
   "description": "Lightweight localStorage plugin for Vue 2.0",
-  "main": "dist/vue-localstorage2.min.js",
-  "module": "index.js",
+  "main": "libs/vue-localstorage2.cjs.js",
+  "module": "libs/vue-localstorage2.es.js",
+  "unpkg": "libs/vue-localstorage2.min.js",
+  "jsdelivr": "libs/vue-localstorage2.min.js",
   "scripts": {
-    "build": "bili --input index.js --format cjs,umd,cjs-min,umd-min --exports named --banner",
-    "test": "jest",
+    "build": "rm -rf dist/ libs/ && tsc && bili",
+    "test": "npm run build && jest",
+    "dev": "tsc",
     "examples": "poi",
-    "docs": "rm -rf docs/ && poi build",
+    "docs": "rm -rf docs/ && poi build && gh-pages -d docs",
     "postversion": "npm run build && npm run docs",
-    "lint": "eslint ."
+    "lint": "tslint -c tslint.json '**/*.ts'"
   },
   "repository": {
     "type": "git",
@@ -23,23 +26,36 @@
   "homepage": "https://github.com/Army-U/vue-localstorage2#readme",
   "license": "MIT",
   "dependencies": {
-    "sewing": "0.0.32"
+    "sewing": "0.0.43"
   },
   "devDependencies": {
-    "@babel/core": "7.0.0-beta.40",
-    "babel-core": "7.0.0-bridge.0",
-    "babel-jest": "22.4.1",
-    "bili": "3.0.3",
+    "babel-core": "6.26.3",
+    "babel-jest": "22.4.3",
+    "bili": "3.1.2",
     "element-ui": "2.2.1",
-    "eslint": "4.18.2",
-    "eslint-config-standard": "11.0.0",
-    "eslint-plugin-import": "2.9.0",
-    "eslint-plugin-node": "6.0.1",
-    "eslint-plugin-promise": "3.6.0",
-    "eslint-plugin-standard": "3.0.1",
-    "jest": "22.4.2",
-    "jest-puppeteer-preset": "2.0.0",
+    "gh-pages": "1.1.0",
+    "jest": "22.4.3",
+    "jest-puppeteer-preset": "3.0.1",
     "poi": "9.6.13",
-    "puppeteer": "1.1.1"
+    "puppeteer": "1.1.1",
+    "regenerator-runtime": "0.11.1",
+    "tslint": "5.10.0",
+    "tslint-config-standard": "7.0.0",
+    "typescript": "2.8.3"
+  },
+  "jest": {
+    "preset": "jest-puppeteer-preset"
+  },
+  "bili": {
+    "input": "dist/index.js",
+    "outDir": "libs",
+    "format": [
+      "cjs",
+      "umd",
+      "es",
+      "umd-min"
+    ],
+    "exports": "named",
+    "banner": true
   }
 }

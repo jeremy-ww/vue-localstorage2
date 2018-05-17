@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "experimentalDecorators": true,
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "lib": [
+      "es2017",
+      "es2016",
+      "dom"
+    ]
+  },
+  "exclude": [
+    "node_modules"  
+  ]
+}

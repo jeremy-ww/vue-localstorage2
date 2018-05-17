@@ -1,19 +1,29 @@
-import isType from 'sewing/dist/isType'
-import get from 'sewing/dist/get'
+import isType from 'sewing/libs/isType'
+import get from 'sewing/libs/get'
+
+interface StorageTarget {
+  [propName: string]: any
+  [propName: number]: any
+}
 
 export default class Storage {
-  static parse (value) {
+  private prefix: string
+
+  static parse (value: any) {
     try {
       return JSON.parse(value)
-    } catch (e) {}
+    } catch (e) {
+      return value
+    }
   }
 
-  static update (obj, path, value) {
+  static update <T extends StorageTarget> (obj: T, path: string[], value: any): T {
     const temp = obj
+
     while (path.length > 1) {
-      obj = obj[path.shift()]
+      obj = obj[path.shift()!]
     }
-    obj[path.shift()] = value
+    obj[path.shift()!] = value
     return temp
   }
 
@@ -21,18 +31,18 @@ export default class Storage {
     this.prefix = `${prefix}_${name ? name + '_' : ''}`
   }
 
-  split (path) {
+  split (path: string) {
     const [target, ...route] = path.split(/\./)
     return { target: this.prefix + target, route }
   }
 
-  get (path, defaultValue) {
+  get (path: string, defaultValue: any) {
     const { target, route } = this.split(path)
     const item = Storage.parse(localStorage.getItem(target))
     return get(item, route.join('.'), defaultValue)
   }
 
-  set (path, value) {
+  set (path: string, value: any) {
     const { target, route } = this.split(path)
     const preItemValue = Storage.parse(localStorage.getItem(target))
 
@@ -47,7 +57,7 @@ export default class Storage {
     )
   }
 
-  remove (item) {
+  remove (item: string) {
     const { target } = this.split(item)
     localStorage.removeItem(target)
   }

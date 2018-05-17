@@ -1,14 +1,26 @@
-import cache from 'sewing/dist/cache'
+import cache from 'sewing/libs/cache'
 import Storage from './Storage'
 
-function localStorage2 (Vue, { namespace = true, prefix } = {}) {
-  const cachedStorageInstance = cache(function (name) {
+declare global {
+  interface Window { Vue?: any }
+}
+
+interface VueStorage {
+  namespace?: boolean
+  prefix?: string
+}
+
+function localStorage2 (
+  Vue: any,
+  { namespace = true, prefix }: VueStorage = {}
+) {
+  const cachedStorageInstance = cache(function (name: string): Storage {
     return new Storage(name, prefix)
   })
 
   Object.defineProperties(Vue.prototype, {
     '$localStorage': {
-      get () {
+      get (): () => Storage {
         const name = namespace ? this.$options.name : ''
         return cachedStorageInstance(name)
       }

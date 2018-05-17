@@ -1,4 +1,4 @@
-const path = require('path').join(__dirname, '../dist/vue-localstorage2.js')
+const path = require('path').join(__dirname, '../libs/vue-localstorage2.js')
 const localStorage2 = require('fs').readFileSync(path, 'utf-8')
 
 describe('Storage', () => {

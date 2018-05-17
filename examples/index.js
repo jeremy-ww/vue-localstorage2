@@ -1,7 +1,7 @@
+import localStorage2 from '../libs/vue-localstorage2.es.js'
 import Button from 'element-ui/lib/button'
 import Input from 'element-ui/lib/input'
 import Tag from 'element-ui/lib/tag'
-import localStorage2 from '../'
 import Demo from './Demo'
 import Vue from 'vue'
 
@@ -18,4 +18,3 @@ new Vue({
   el: '#app',
   render: h => h(Demo)
 })
-
