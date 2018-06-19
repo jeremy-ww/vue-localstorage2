@@ -6,12 +6,16 @@ interface StorageTarget {
   [propName: number]: any
 }
 
+const { MAX_SAFE_INTEGER = 9007199254740991 } = Number
+
 export default class Storage {
   private prefix: string
 
   static parse (value: any) {
     try {
-      return JSON.parse(value)
+      return isType(value, 'String') && (Math.abs(value) > MAX_SAFE_INTEGER)
+        ? value
+        : JSON.parse(value)
     } catch (e) {
       return value
     }
