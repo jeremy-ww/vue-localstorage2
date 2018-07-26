@@ -1,11 +1,11 @@
-import cache from 'sewing/libs/cache'
+import cache from 'sewing/dist/cache'
 import Storage from './Storage'
 
 declare global {
   interface Window { Vue?: any }
 }
 
-interface VueStorage {
+export interface VueStorage {
   namespace?: boolean
   prefix?: string
 }

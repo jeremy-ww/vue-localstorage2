@@ -1,7 +1,7 @@
-import isType from 'sewing/libs/isType'
-import get from 'sewing/libs/get'
+import isType from 'sewing/dist/isType'
+import get from 'sewing/dist/get'
 
-interface StorageTarget {
+export interface StorageTarget {
   [propName: string]: any
   [propName: number]: any
 }

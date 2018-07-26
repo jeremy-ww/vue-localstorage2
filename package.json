@@ -9,11 +9,11 @@
   "scripts": {
     "build": "rm -rf dist/ libs/ && tsc && bili",
     "test": "npm run build && jest",
-    "dev": "tsc",
+    "dev": "rm -rf dist/ && tsc",
     "examples": "poi",
     "docs": "rm -rf docs/ && poi build && gh-pages -d docs",
     "postversion": "npm run build && npm run docs",
-    "lint": "tslint -c tslint.json '*.ts'"
+    "lint": "tslint --project tsconfig.json"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,7 @@
   "homepage": "https://github.com/Army-U/vue-localstorage2#readme",
   "license": "MIT",
   "dependencies": {
-    "sewing": "0.0.43"
+    "sewing": "0.0.53"
   },
   "devDependencies": {
     "babel-core": "6.26.3",
