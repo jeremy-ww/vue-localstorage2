@@ -6,7 +6,7 @@
 
 * 可根据组件名自动添加 namespace
 * 对象存储友好化
-* 获取存储值时可以使用类似 [lodash/get](https://github.com/Army-U/sewing/blob/dev/libs/get.js) 方法
+* 获取存储值时可以使用类似 [lodash/get](https://github.com/Army-U/sewing/blob/dev/src/get.ts) 方法
 * 可直接修改存储对象的单个属性
 
 ## 安装
@@ -48,7 +48,7 @@ Vue.use(localStorage2, {
 
 #### `get(path, defaultValue)`
 
-通过类似 [lodash/get](https://github.com/Army-U/sewing/blob/dev/libs/get.js) 的方式获取存储在 storage 中的值.
+通过类似 [lodash/get](https://github.com/Army-U/sewing/blob/dev/src/get.ts) 的方式获取存储在 storage 中的值.
 
 ```js
 this.$localStorage.get('name', 'tom')

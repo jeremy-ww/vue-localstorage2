@@ -1,12 +1,12 @@
 # vue-localstorage2 [![Build Status](https://img.shields.io/circleci/project/github/Army-U/vue-localstorage2.svg?style=flat-square)](https://circleci.com/gh/Army-U/vue-localstorage2) [![npm package](https://img.shields.io/npm/v/vue-localstorage2.svg?style=flat-square)](https://www.npmjs.com/package/vue-localstorage2)
 
-Lightweight localStorage plug-in for Vue2.0. [（中文文档）](README.zh-CN.md)
+Lightweight localStorage plugin for Vue2.0. [（中文文档）](README.zh-CN.md)
 
 ## Features
 
 * Add namespace automatically according to the component name
 * Object storage friendly
-* similar [lodash/get](https://github.com/Army-U/sewing/blob/dev/libs/get.js) method can be used when obtaining storage values
+* similar [lodash/get](https://github.com/Army-U/sewing/blob/dev/src/get.ts) method can be used when obtaining storage values
 * could modify single property of the storaged object directly
 
 ## Install
@@ -49,7 +49,7 @@ Vue.use(localStorage2, {
 
 #### `get(path, defaultValue)`
 
-Get the value stored in storage by method similar to [lodash/get](https://github.com/Army-U/sewing/blob/dev/libs/get.js).
+Get the value stored in storage by method similar to [lodash/get](https://github.com/Army-U/sewing/blob/dev/src/get.ts).
 
 ```js
 this.$localStorage.get('name', 'tom')
