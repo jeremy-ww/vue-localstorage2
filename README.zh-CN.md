@@ -17,11 +17,22 @@ $ npm i vue-localstorage2 -S
 
 ## 使用
 
+在 Vue.js 中使用:
+
 ```js
 import localStorage2 from 'vue-localstorage2'
 import Vue from 'vue'
 
 Vue.use(localStorage2)
+```
+
+在其他框架中使用, 如 React:
+```js
+import { Storage } from 'vue-localstorage2'
+
+const storage = new Storage('app_name', 'app_prefix')
+storage.set('item', 'value')
+storage.get('item', 'default_value')
 ```
 
 ## 配置项
