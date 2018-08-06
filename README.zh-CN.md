@@ -1,4 +1,4 @@
-# vue-localstorage2 [![Build Status](https://img.shields.io/circleci/project/github/Army-U/vue-localstorage2.svg?style=flat-square)](https://circleci.com/gh/Army-U/vue-localstorage2) [![npm package](https://img.shields.io/npm/v/vue-localstorage2.svg?style=flat-square)](https://www.npmjs.com/package/vue-localstorage2)
+# vue-localstorage2 [![Build Status](https://flat.badgen.net/circleci/github/Army-U/vue-localstorage2/master)](https://circleci.com/gh/Army-U/vue-localstorage2) [![npm package](https://flat.badgen.net/npm/v/vue-localstorage2)](https://www.npmjs.com/package/vue-localstorage2)
 
 轻量级适用于 Vue2.0 的 localStorage 插件. [（English Doc）](README.md)
 
