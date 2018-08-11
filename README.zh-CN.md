@@ -85,7 +85,7 @@ this.$localStorage.remove('name')
 
 #### `clear()`
 
-clear 方法并不会清除该域名下的所有 localStorage, 只会清楚通过 vue-localstorage2 生成的值(即存储值的名称是以 `prefix` + `component name` 开始的键值对).
+clear 方法并不会清除该域名下的所有 localStorage, 只会清除通过 vue-localstorage2 生成的值(即存储值的名称是以 `prefix` + `component name` 开始的键值对).
 
 ```js
 this.$localStorage.clear()
